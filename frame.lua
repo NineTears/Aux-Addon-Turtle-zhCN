@@ -36,7 +36,7 @@ do
 	local btn = gui.button(frame)
 	btn:SetPoint('BOTTOMRIGHT', -5, 5)
 	gui.set_size(btn, 60, 24)
-	btn:SetText('Close')
+	btn:SetText('关闭')
 	btn:SetScript('OnClick', function() frame:Hide() end)
 	close_button = btn
 end
@@ -44,7 +44,7 @@ do
 	local btn = gui.button(frame, gui.font_size.small)
 	btn:SetPoint('RIGHT', close_button, 'LEFT' , -5, 0)
 	gui.set_size(btn, 60, 24)
-	btn:SetText(color.blizzard'Blizzard UI')
+	btn:SetText(color.blizzard'暴雪原UI')
 	btn:SetScript('OnClick',function()
 		if AuctionFrame:IsVisible() then HideUIPanel(AuctionFrame) else ShowUIPanel(AuctionFrame) end
 	end)

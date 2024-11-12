@@ -65,7 +65,7 @@ end
 
 M.search_columns = {
     {
-        title = 'Item',
+        title = '物品',
         width = .35,
         init = item_column_init,
         fill = item_column_fill,
@@ -74,7 +74,7 @@ M.search_columns = {
         end,
     },
     {
-        title = 'Lvl',
+        title = '等级',
         width = .035,
         align = 'CENTER',
         fill = function(cell, record)
@@ -87,7 +87,7 @@ M.search_columns = {
         end,
     },
     {
-        title = 'Auctions',
+        title = '拍卖数',
         width = .06,
         align = 'CENTER',
         fill = function(cell, record, count, own, expandable)
@@ -111,7 +111,7 @@ M.search_columns = {
         end,
     },
     {
-        title = 'Stack\nSize',
+        title = '组叠\n大小',
         width = .055,
         align = 'CENTER',
         fill = function(cell, record)
@@ -122,7 +122,7 @@ M.search_columns = {
         end,
     },
     {
-        title = 'Time\nLeft',
+        title = '剩余\n时间',
         width = .04,
         align = 'CENTER',
         fill = function(cell, record)
@@ -133,7 +133,7 @@ M.search_columns = {
         end,
     },
     {
-        title = 'Seller',
+        title = '卖家',
         width = .13,
         align = 'CENTER',
         fill = function(cell, record)
@@ -152,7 +152,7 @@ M.search_columns = {
         end,
     },
     {
-        title = {'Auction Bid\n(per item)', 'Auction Bid\n(per stack)'},
+        title = {'竞拍\n(每件)', '竞拍\n(每组)'},
         width = .125,
         align = 'RIGHT',
         isPrice = true,
@@ -200,7 +200,7 @@ M.search_columns = {
         end,
     },
     {
-        title = {'Auction Buyout\n(per item)', 'Auction Buyout\n(per stack)'},
+        title = {'一口价\n(每件)', '一口价\n(每组)'},
         width = .125,
         align = 'RIGHT',
         isPrice = true,
@@ -218,7 +218,7 @@ M.search_columns = {
         end,
     },
     {
-        title = '% Hist.\nValue',
+        title = '价格\n对比',
         width = .08,
         align = 'CENTER',
         fill = function(cell, record)
@@ -235,7 +235,7 @@ M.search_columns = {
 
 M.auctions_columns = {
     {
-        title = 'Item',
+        title = '物品',
         width = .35,
         init = item_column_init,
         fill = item_column_fill,
@@ -244,7 +244,7 @@ M.auctions_columns = {
         end,
     },
     {
-        title = 'Lvl',
+        title = '等级',
         width = .035,
         align = 'CENTER',
         fill = function(cell, record)
@@ -257,7 +257,7 @@ M.auctions_columns = {
         end,
     },
     {
-        title = 'Auctions',
+        title = '拍卖数',
         width = .06,
         align = 'CENTER',
         fill = function(cell, record, count, own, expandable)
@@ -278,7 +278,7 @@ M.auctions_columns = {
         end,
     },
     {
-        title = 'Stack\nSize',
+        title = '组叠\n大小',
         width = .055,
         align = 'CENTER',
         fill = function(cell, record)
@@ -289,7 +289,7 @@ M.auctions_columns = {
         end,
     },
     {
-        title = 'Time\nLeft',
+        title = '剩余\n时间',
         width = .04,
         align = 'CENTER',
         fill = function(cell, record)
@@ -300,7 +300,7 @@ M.auctions_columns = {
         end,
     },
     {
-        title = {'Auction Bid\n(per item)', 'Auction Bid\n(per stack)'},
+        title = {'竞价\n(每个)', '竞价\n(每组)'},
         width = .125,
         align = 'RIGHT',
         isPrice = true,
@@ -330,7 +330,7 @@ M.auctions_columns = {
         end,
     },
     {
-        title = {'Auction Buyout\n(per item)', 'Auction Buyout\n(per stack)'},
+        title = {'一口价\n(每件)', '一口价\n(每组)'},
         width = .125,
         align = 'RIGHT',
         isPrice = true,
@@ -348,11 +348,11 @@ M.auctions_columns = {
         end,
     },
     {
-        title = 'High Bidder',
+        title = '最高竞价人',
         width = .21,
         align = 'CENTER',
         fill = function(cell, record)
-            cell.text:SetText(record.high_bidder or aux.color.red 'No Bids')
+            cell.text:SetText(record.high_bidder or aux.color.red '无竞价')
         end,
         cmp = function(record_a, record_b, desc)
             if not record_a.high_bidder and not record_b.high_bidder then
@@ -370,7 +370,7 @@ M.auctions_columns = {
 
 M.bids_columns = {
     {
-        title = 'Item',
+        title = '物品',
         width = .35,
         init = item_column_init,
         fill = item_column_fill,
@@ -379,7 +379,7 @@ M.bids_columns = {
         end,
     },
     {
-        title = 'Auctions',
+        title = '拍卖数',
         width = .06,
         align = 'CENTER',
         fill = function(cell, record, count, own, expandable)
@@ -400,7 +400,7 @@ M.bids_columns = {
         end,
     },
     {
-        title = 'Stack\nSize',
+        title = '组叠\n大小',
         width = .055,
         align = 'CENTER',
         fill = function(cell, record)
@@ -411,7 +411,7 @@ M.bids_columns = {
         end,
     },
     {
-        title = 'Time\nLeft',
+        title = '剩余\n时间',
         width = .04,
         align = 'CENTER',
         fill = function(cell, record)
@@ -422,7 +422,7 @@ M.bids_columns = {
         end,
     },
     {
-        title = 'Seller',
+        title = '卖家',
         width = .13,
         align = 'CENTER',
         fill = function(cell, record)
@@ -441,7 +441,7 @@ M.bids_columns = {
         end,
     },
     {
-        title = {'Auction Bid\n(per item)', 'Auction Bid\n(per stack)'},
+        title = {'竞拍\n(每件)', '竞拍\n(每组)'},
         width = .125,
         align = 'RIGHT',
         isPrice = true,
@@ -471,7 +471,7 @@ M.bids_columns = {
         end,
     },
     {
-        title = {'Auction Buyout\n(per item)', 'Auction Buyout\n(per stack)'},
+        title = {'一口价\n(每件)', '一口价\n(每组)'},
         width = .125,
         align = 'RIGHT',
         isPrice = true,
@@ -489,15 +489,15 @@ M.bids_columns = {
         end,
     },
     {
-        title = 'Status',
+        title = '状态',
         width = .115,
         align = 'CENTER',
         fill = function(cell, record)
             local status
             if record.high_bidder then
-                status = aux.color.yellow'High Bidder'
+                status = aux.color.yellow'最高竞拍人'
             else
-                status = aux.color.red'Outbid'
+                status = aux.color.red'击败'
             end
             cell.text:SetText(status)
         end,
@@ -581,11 +581,11 @@ local methods = {
         local rt = this.rt
         if rt.expanded[this.expandKey] then
             GameTooltip_SetDefaultAnchor(GameTooltip, UIParent)
-            GameTooltip:AddLine('Double-click to collapse this item and show only the cheapest auction.', 1, 1, 1, true)
+            GameTooltip:AddLine('双击折叠此物品，只显示最便宜的拍卖。', 1, 1, 1, true)
             GameTooltip:Show()
         elseif this.expandable then
             GameTooltip_SetDefaultAnchor(GameTooltip, UIParent)
-            GameTooltip:AddLine('Double-click to expand this item and show all the auctions.', 1, 1, 1, true)
+            GameTooltip:AddLine('双击可展开此物品并显示所有拍卖。', 1, 1, 1, true)
             GameTooltip:Show()
         end
 

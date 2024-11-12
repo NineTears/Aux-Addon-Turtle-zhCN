@@ -3,10 +3,10 @@ module 'aux.tabs.search'
 local aux = require 'aux'
 local info = require 'aux.util.info'
 
-local tab = aux.tab 'Search'
+local tab = aux.tab '搜索'
 
 StaticPopupDialogs.AUX_SEARCH_TABLE_FULL = {
-    text = 'Table full!\nFurther results from this search will still be processed but no longer displayed in the table.',
+    text = '表格满了!\n此次搜索的进一步结果仍将被处理，但不再显示在表中.',
     button1 = 'Ok',
     showAlert = 1,
     timeout = 0,

@@ -3,6 +3,9 @@
 ## OptionalDeps: ShaguTweaks
 ## Title: aux
 ## Notes: Auction House replacement
+## Title-zhCN: |CFF00CD00[商业]|RAux拍卖行插件
+## Notes-zhCN: |CFF00CD00Aux-Addon|R|N更快捷的比较商品价格，上架商品。
+## Version: 1.0.0
 ## SavedVariables: aux
 
 libs\package.lua

@@ -70,11 +70,11 @@ handlers = {
 				local auto_buy = data.search.auto_buy
 				local auto_bid = data.search.auto_bid
 				gui.menu(
-					(auto_buy and 'Disable' or 'Enable') .. ' Auto Buy', function() if auto_buy then data.search.auto_buy = nil else enable_auto_buy(data.search) end u() end,
-					(auto_bid and 'Disable' or 'Enable') .. ' Auto Bid', function() if auto_bid then data.search.auto_bid = nil else enable_auto_bid(data.search) end u() end,
-					'Move Up', function() move_up(favorite_searches, data.index); u() end,
-					'Move Down', function() move_down(favorite_searches, data.index); u() end,
-					'Delete', function() tremove(favorite_searches, data.index); u() end
+					(auto_buy and '禁用' or '启用') .. ' 自动购买', function() if auto_buy then data.search.auto_buy = nil else enable_auto_buy(data.search) end u() end,
+					(auto_bid and '禁用' or '启用') .. ' 自动竞价', function() if auto_bid then data.search.auto_bid = nil else enable_auto_bid(data.search) end u() end,
+					'上移', function() move_up(favorite_searches, data.index); u() end,
+					'下移', function() move_down(favorite_searches, data.index); u() end,
+					'删除', function() tremove(favorite_searches, data.index); u() end
 				)
 			end
 		end
@@ -99,7 +99,7 @@ function get_auto_buy_validator()
 			if queries then
 				tinsert(validators, queries[1].validator)
 			else
-				aux.print('Invalid auto buy filter:', error)
+				aux.print('无效的自动购买过滤器:', error)
 			end
 		end
 	end
@@ -116,7 +116,7 @@ function get_auto_bid_validator()
 			if queries then
 				tinsert(validators, queries[1].validator)
 			else
-				aux.print('Invalid auto bid filter:', error)
+				aux.print('无效的自动竞价过滤器:', error)
 			end
 		end
 	end
@@ -134,7 +134,7 @@ function add_favorite(filter_string)
 		))
 		update_search_listings()
 	else
-		aux.print('Invalid filter:', error)
+		aux.print('无效的筛选:', error)
 	end
 end
 
@@ -142,14 +142,14 @@ function enable_auto_buy(search)
 	local queries, error = filter_util.queries(search.filter_string)
 	if queries then
 		if getn(queries) > 1 then
-			aux.print('Error: Auto Buy does not support multi-queries')
+			aux.print('错误：自动购买不支持多查询')
 		elseif aux.size(queries[1].blizzard_query) > 0 and not filter_util.parse_filter_string(search.filter_string).blizzard.exact then
-			aux.print('Error: Auto Buy does not support Blizzard filters')
+			aux.print('错误：自动购买不支持暴雪过滤器')
 		else
 			search.auto_buy = true
 		end
 	else
-		aux.print('Invalid filter:', error)
+		aux.print('无效的筛选:', error)
 	end
 end
 
@@ -157,14 +157,14 @@ function enable_auto_bid(search)
 	local queries, error = filter_util.queries(search.filter_string)
 	if queries then
 		if getn(queries) > 1 then
-			aux.print('Error: Auto Bid does not support multi-queries')
+			aux.print('错误：自动竞价不支持多查询')
 		elseif aux.size(queries[1].blizzard_query) > 0 and not filter_util.parse_filter_string(search.filter_string).blizzard.exact then
-			aux.print('Error: Auto Bid does not support Blizzard filters')
+			aux.print('错误：自动竞价不支持暴雪过滤器')
 		else
 			search.auto_bid = true
 		end
 	else
-		aux.print('Invalid filter:', error)
+		aux.print('无效的筛选:', error)
 	end
 end
 

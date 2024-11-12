@@ -38,7 +38,7 @@ do
 			for _, f in handlers do f() end
 		elseif event == 'PLAYER_LOGIN' then
 			for _, f in handlers2 do f() end
-			print('loaded - /aux')
+			print('加载完成 - /aux')
 		else
 			_M[event]()
 		end
@@ -78,6 +78,7 @@ function handle.LOAD()
                 daily = false,
                 disenchant_value = false,
                 disenchant_distribution = false,
+				unit_cn = false,
             }
         })
     end

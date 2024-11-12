@@ -200,11 +200,11 @@ end
 function M.populate_wdb(item_id)
 	item_id = item_id or MIN_ITEM_ID
 	if item_id > MAX_ITEM_ID then
-		aux.print('Cache populated.')
+		aux.print('缓存填充.')
 		return
 	end
 	if not GetItemInfo('item:' .. item_id) then
-		aux.print('Fetching item ' .. item_id .. '.')
+		aux.print('获取物品 ' .. item_id .. '.')
 		AuxTooltip:SetHyperlink('item:' .. item_id)
 	end
 	aux.thread(populate_wdb, item_id + 1)
