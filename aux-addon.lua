@@ -78,7 +78,6 @@ function handle.LOAD()
                 daily = false,
                 disenchant_value = false,
                 disenchant_distribution = false,
-				unit_cn = false,
             }
         })
     end
