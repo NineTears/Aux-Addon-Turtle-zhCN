@@ -34,7 +34,7 @@ function M.scan_auctions()
         queries = {{blizzard_query = T.acquire()}},
         on_page_loaded = function(page, total_pages)
             status_bar:update_status(page / total_pages, 0)
-            status_bar:set_text(format('扫描中 (%d / %d页)', page, total_pages))
+            status_bar:set_text(format('扫描中 （第 %d/%d 页）', page, total_pages))
         end,
         on_auction = function(auction_record)
             tinsert(auction_records, auction_record)

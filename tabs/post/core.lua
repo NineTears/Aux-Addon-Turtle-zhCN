@@ -523,7 +523,7 @@ function refresh_entries()
 			queries = T.list(query),
 			on_page_loaded = function(page, total_pages)
                 status_bar:update_status(page / total_pages, 0) -- TODO
-                status_bar:set_text(format('扫描中 %d / %d页', page, total_pages))
+                status_bar:set_text(format('扫描中 第 %d/%d 页', page, total_pages))
 			end,
 			on_auction = function(auction_record)
 				if auction_record.item_key == item_key then
