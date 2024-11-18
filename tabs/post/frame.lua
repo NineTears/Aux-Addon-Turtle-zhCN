@@ -132,7 +132,7 @@ end
 do
     local btn = gui.button(frame.parameters)
     btn:SetPoint('TOPLEFT', status_bar, 'TOPRIGHT', 5, 0)
-    btn:SetText('卖')
+    btn:SetText('出售')
     btn:SetScript('OnClick', post_auctions)
     post_button = btn
 end

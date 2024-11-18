@@ -44,7 +44,7 @@ do
 	local btn = gui.button(frame, gui.font_size.small)
 	btn:SetPoint('RIGHT', close_button, 'LEFT' , -5, 0)
 	gui.set_size(btn, 60, 24)
-	btn:SetText(color.blizzard'暴雪原UI')
+	btn:SetText(color.blizzard'暴雪界面')
 	btn:SetScript('OnClick',function()
 		if AuctionFrame:IsVisible() then HideUIPanel(AuctionFrame) else ShowUIPanel(AuctionFrame) end
 	end)
