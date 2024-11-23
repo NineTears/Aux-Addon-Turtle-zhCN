@@ -191,7 +191,7 @@ function start_real_time_scan(query, search, continuation)
 		end,
 		on_abort = function()
 			search.status_bar:update_status(1, 1)
-			search.status_bar:set_text('扫描暂停')
+			search.status_bar:set_text('扫描已暂停')
 
 			search.continuation = next_page or not ignore_page and query.blizzard_query.first_page or true
 
@@ -232,9 +232,9 @@ function start_search(queries, continuation)
 		on_scan_start = function()
 			search.status_bar:update_status(0, 0)
 			if continuation then
-				search.status_bar:set_text('恢复扫描...')
+				search.status_bar:set_text('恢复扫描中...')
 			else
-				search.status_bar:set_text('扫描拍卖...')
+				search.status_bar:set_text('扫描拍卖中...')
 			end
 		end,
 		on_page_loaded = function(_, total_scan_pages)
@@ -273,7 +273,7 @@ function start_search(queries, continuation)
 		end,
 		on_abort = function()
 			search.status_bar:update_status(1, 1)
-			search.status_bar:set_text('扫描暂停')
+			search.status_bar:set_text('扫描已暂停')
 
 			if current_query then
 				search.continuation = {current_query, current_page + 1}

@@ -150,7 +150,7 @@ do
     btn:SetHeight(25)
     btn:SetPoint('RIGHT', start_button, 'LEFT', -4, 0)
     btn:SetBackdropColor(aux.color.state.enabled())
-    btn:SetText('恢复')
+    btn:SetText('恢复扫描')
     btn:SetScript('OnClick', function()
         execute(true)
     end)
