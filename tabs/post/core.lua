@@ -605,7 +605,7 @@ function initialize_duration_dropdown()
         refresh = true
     end
     UIDropDownMenu_AddButton{
-        text = '6 小时',
+        text = '8 小时',
         value = DURATION_2,
         func = on_click,
     }
