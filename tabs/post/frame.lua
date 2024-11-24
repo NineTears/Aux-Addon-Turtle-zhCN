@@ -232,7 +232,7 @@ do
     end)
     local label = gui.label(checkbox, gui.font_size.small)
     label:SetPoint('LEFT', checkbox, 'RIGHT', 4, 1)
-    label:SetText('隐藏这个物品')
+    label:SetText('隐藏此物品')
     hide_checkbox = checkbox
 end
 do
@@ -264,7 +264,7 @@ do
     do
         local label = gui.label(editbox, 14)
         label:SetPoint('LEFT', editbox, 'RIGHT', 8, 0)
-        label:SetWidth(50)
+        label:SetWidth(60)
         label:SetJustifyH('CENTER')
         start_price_percentage = label
     end
@@ -299,7 +299,7 @@ do
     do
         local label = gui.label(editbox, 14)
         label:SetPoint('LEFT', editbox, 'RIGHT', 8, 0)
-        label:SetWidth(50)
+        label:SetWidth(60)
         label:SetJustifyH('CENTER')
         buyout_price_percentage = label
     end

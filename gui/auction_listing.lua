@@ -123,7 +123,7 @@ M.search_columns = {
     },
     {
         title = '剩余\n时间',
-        width = .04,
+        width = .05,
         align = 'CENTER',
         fill = function(cell, record)
             cell.text:SetText(TIME_LEFT_STRINGS[record.duration or 0] or '?')
@@ -153,7 +153,7 @@ M.search_columns = {
     },
     {
         title = {'竞拍\n(每件)', '竞拍\n(每组)'},
-        width = .125,
+        width = .22,
         align = 'RIGHT',
         isPrice = true,
         fill = function(cell, record)
@@ -201,7 +201,7 @@ M.search_columns = {
     },
     {
         title = {'一口价\n(每件)', '一口价\n(每组)'},
-        width = .125,
+        width = .22,
         align = 'RIGHT',
         isPrice = true,
         fill = function(cell, record)
@@ -290,7 +290,7 @@ M.auctions_columns = {
     },
     {
         title = '剩余\n时间',
-        width = .04,
+        width = .05,
         align = 'CENTER',
         fill = function(cell, record)
             cell.text:SetText(TIME_LEFT_STRINGS[record.duration or 0] or '?')
@@ -301,7 +301,7 @@ M.auctions_columns = {
     },
     {
         title = {'竞价\n(每个)', '竞价\n(每组)'},
-        width = .125,
+        width = .22,
         align = 'RIGHT',
         isPrice = true,
         fill = function(cell, record)
@@ -331,7 +331,7 @@ M.auctions_columns = {
     },
     {
         title = {'一口价\n(每件)', '一口价\n(每组)'},
-        width = .125,
+        width = .22,
         align = 'RIGHT',
         isPrice = true,
         fill = function(cell, record)
@@ -412,7 +412,7 @@ M.bids_columns = {
     },
     {
         title = '剩余\n时间',
-        width = .04,
+        width = .05,
         align = 'CENTER',
         fill = function(cell, record)
             cell.text:SetText(TIME_LEFT_STRINGS[record.duration or 0] or '?')
@@ -442,7 +442,7 @@ M.bids_columns = {
     },
     {
         title = {'竞拍\n(每件)', '竞拍\n(每组)'},
-        width = .125,
+        width = .22,
         align = 'RIGHT',
         isPrice = true,
         fill = function(cell, record)
@@ -472,7 +472,7 @@ M.bids_columns = {
     },
     {
         title = {'一口价\n(每件)', '一口价\n(每组)'},
-        width = .125,
+        width = .22,
         align = 'RIGHT',
         isPrice = true,
         fill = function(cell, record)

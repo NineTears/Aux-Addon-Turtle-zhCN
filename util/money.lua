@@ -3,9 +3,9 @@ module 'aux.util.money'
 local T = require 'T'
 local aux = require 'aux'
 
-M.GOLD_TEXT = '|cffffd70ag|r'
-M.SILVER_TEXT = '|cffc7c7cfs|r'
-M.COPPER_TEXT = '|cffeda55fc|r'
+M.GOLD_TEXT = '|cffffd70a金|r'
+M.SILVER_TEXT = '|cffc7c7cf银|r'
+M.COPPER_TEXT = '|cffeda55f铜|r'
 
 local COPPER_PER_GOLD = 10000
 local COPPER_PER_SILVER = 100
@@ -42,15 +42,15 @@ function M.to_string2(money, exact, color)
 
 	local fmt = START
 	if g > 0 then
-		str = str .. format(fmt, GOLD, g)
+		str = str .. format(fmt, GOLD, g) .. '金'
 		fmt = PART
 	end
 	if s > 0 or c > 0 then
-		str = str .. format(fmt, SILVER, s)
+		str = str .. format(fmt, SILVER, s) .. '银'
 		fmt = PART
 	end
 	if c > 0 then
-		str = str .. format(fmt, COPPER, c)
+		str = str .. format(fmt, COPPER, c) .. '铜'
 	end
 	if str == '' then
 		str = NONE
@@ -65,7 +65,7 @@ function M.to_string(money, pad, trim, color, no_color)
 
 	local gold_text, silver_text, copper_text
 	if no_color then
-		gold_text, silver_text, copper_text = 'g', 's', 'c'
+		gold_text, silver_text, copper_text = '金', '银', '铜'
 	else
 		gold_text, silver_text, copper_text = GOLD_TEXT, SILVER_TEXT, COPPER_TEXT
 	end
@@ -108,14 +108,14 @@ function M.from_string(value)
 
 	value = gsub(gsub(strlower(value), '|c%x%x%x%x%x%x%x%x', ''), FONT_COLOR_CODE_CLOSE, '')
 
-	local gold = tonumber(aux.select(3, strfind(value, '(%d*%.?%d+)g')))
-	local silver = tonumber(aux.select(3, strfind(value, '(%d*%.?%d+)s')))
-	local copper = tonumber(aux.select(3, strfind(value, '(%d*%.?%d+)c')))
+	local gold = tonumber(aux.select(3, strfind(value, '(%d*%.?%d+)金')))
+	local silver = tonumber(aux.select(3, strfind(value, '(%d*%.?%d+)银')))
+	local copper = tonumber(aux.select(3, strfind(value, '(%d*%.?%d+)铜')))
 	if not gold and not silver and not copper then return end
 
-	value = gsub(value, '%d*%.?%d+g', '', 1)
-	value = gsub(value, '%d*%.?%d+s', '', 1)
-	value = gsub(value, '%d*%.?%d+c', '', 1)
+	value = gsub(value, '%d*%.?%d+金', '', 1)
+	value = gsub(value, '%d*%.?%d+银', '', 1)
+	value = gsub(value, '%d*%.?%d+铜', '', 1)
 	if strfind(value, '%S') then return end
 
 	return from_gsc(gold or 0, silver or 0, copper or 0)

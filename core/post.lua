@@ -141,13 +141,13 @@ function post_auction(slot, k)
 			local silver = floor(mod(start_price, COPPER_PER_GOLD) / COPPER_PER_SILVER)
 			local copper = aux.round(mod(start_price, COPPER_PER_SILVER))
 			
-			print("bid_price: "..gold.."g "..silver.."s "..copper.."c")
+			print("bid_price: "..gold.."金 "..silver.."银 "..copper.."铜")
 			
 			gold = floor(buyout_price / COPPER_PER_GOLD)
 			silver = floor(mod(buyout_price, COPPER_PER_GOLD) / COPPER_PER_SILVER)
 			copper = aux.round(mod(buyout_price, COPPER_PER_SILVER))
 			
-			print("buyout_price: "..gold.."g "..silver.."s "..copper.."c")
+			print("buyout_price: "..gold.."金 "..silver.."银 "..copper.."铜")
 
 		end
 		
