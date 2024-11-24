@@ -50,7 +50,7 @@ function M.find(auction_record, status_bar, on_abort, on_failure, on_success)
                 found = true
                 scan.stop()
                 status_bar:update_status(1, 1)
-                status_bar:set_text('拍卖发现')
+                status_bar:set_text('拍卖已发现')
                 return on_success(record.index)
             end
         end,
