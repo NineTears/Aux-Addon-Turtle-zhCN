@@ -200,7 +200,7 @@ end
 function M.populate_wdb(item_id)
 	item_id = item_id or MIN_ITEM_ID
 	if item_id > MAX_ITEM_ID then
-		aux.print('缓存已填充。')
+		aux.print('缓存已更新')
 		return
 	end
 	if not GetItemInfo('item:' .. item_id) then
